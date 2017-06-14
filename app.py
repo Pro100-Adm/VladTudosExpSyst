@@ -48,7 +48,7 @@ def calc(x):
             if i==list(ver_var_Len_X.keys())[r]:
                 Len_X = x[i]*list(ver_var_Len_X.values())[r]
         for s in range(0,len(ver_var_Len_Z)-1):
-            if i==list(ver_var__Len_Z.keys())[s]:
+            if i==list(ver_var_Len_Z.keys())[s]:
                 Len_Z = x[i]*list(ver_var_Len_Z.values())[s]
     y=[str(Sams_A3),str(Sams_A5),str(Sams_S7),str(Sams_S8),str(Iphone_6S),str(Iphone_7),str(Len_K5),str(Len_K6),str(Len_X),str(Len_Z)]
     return y
@@ -79,7 +79,7 @@ def wsgi_app(environ, start_response):
         try:
             for i in range(0,len(x)-1):
                 x[i]=float(x[i])
-            #y=calc(x)
+            y=calc(x)
             response_body=str(x[0])            
             start_response(status, response_headers)
             yield response_body.encode()
