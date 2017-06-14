@@ -80,7 +80,7 @@ def wsgi_app(environ, start_response):
             for i in range(0,len(x)-1):
                 x[i]=float(x[i])
             y=calc(x)
-            response_body=str(x[0])            
+            response_body="Воспользоваться услугами биржевого брокера: "+str(y[0])+"<br>"+"Использовать техничсекий анализ: "+str(y[1])+"<br>"+"Использовать функциональный анализ: "+str(y[2])+"<br>"+"Прогнощы на основе новостей: "+str(y[3])+"<br>"+"iPhone6S: "+str(y[4])+"<br>"+"iPhone7: "+str(y[5])+"<br>"+"Комбинация фундаментального и технического анализа: "+str(y[6])+"<br>"+"Комбинация фундаментального анализа и новостей: "+str(y[7])+"<br>"+"Комбинация технического анализа и новостей: "+str(y[8])+"<br>"+"Комбинация фундаментального,технического анализа и новостей: "+str(y[9])+"<br>"
             start_response(status, response_headers)
             yield response_body.encode()
         except:
